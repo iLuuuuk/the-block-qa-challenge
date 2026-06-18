@@ -4,7 +4,7 @@
 
 - Name: Lucas
 - Date: 2026-06-17
-- Repository URL: (your fork URL here)
+- Repository URL: https://github.com/iLuuuuk/the-block-qa-challenge.git
 
 ## How to Run
 
