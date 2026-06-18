@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Block QA Challenge</title>
+    <style>
+      :root {
+        --bg: #f5f7fb;
+        --card: #ffffff;
+        --text: #101828;
+        --muted: #475467;
+        --accent: #0b5fff;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background: var(--bg);
+        color: var(--text);
+      }
+      .page {
+        max-width: 1080px;
+        margin: 0 auto;
+        padding: 1rem;
+      }
+      .toolbar {
+        display: grid;
+        gap: 0.75rem;
+        grid-template-columns: 1fr 200px 170px;
+        margin-bottom: 1rem;
+      }
+      input, select, button {
+        padding: 0.65rem 0.75rem;
+        border-radius: 8px;
+        border: 1px solid #d0d5dd;
+      }
+      button {
+        background: var(--accent);
+        color: white;
+        border-color: var(--accent);
+        cursor: pointer;
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        gap: 0.75rem;
+      }
+      li {
+        background: var(--card);
+        border-radius: 12px;
+        padding: 1rem;
+        border: 1px solid #e4e7ec;
+      }
+      a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+      .muted { color: var(--muted); }
+      @media (max-width: 760px) {
+        .toolbar {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <h1>OPENLANE Buyer Inventory</h1>
+      <p class="muted">SUT for QA automation candidate challenge.</p>
+
+      <section class="toolbar">
+        <input id="search" placeholder="Search make/model/title" />
+        <select id="bodyStyle">
+          <option value="">All body styles</option>
+          <option value="SUV">SUV</option>
+          <option value="Sedan">Sedan</option>
+          <option value="Truck">Truck</option>
+        </select>
+        <button id="reload">Refresh</button>
+      </section>
+
+      <ul id="list"></ul>
+      <p id="status" class="muted"></p>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>

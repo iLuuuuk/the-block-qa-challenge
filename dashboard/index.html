@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Test Dashboard</title>
+  <style>
+    body { font-family: sans-serif; background: #0f1117; color: #e2e8f0; padding: 2rem; }
+    h1 { margin-bottom: 1.5rem; }
+    button { background: #6366f1; color: white; border: none; padding: 0.6rem 1.4rem; border-radius: 8px; cursor: pointer; font-size: 1rem; }
+    button:disabled { background: #374151; cursor: not-allowed; }
+    .suites { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 1.5rem; }
+    .suite { background: #1e2330; border-radius: 12px; padding: 1.2rem; }
+    .suite h2 { margin: 0 0 1rem; font-size: 1rem; color: #94a3b8; }
+    .item { display: flex; align-items: center; gap: 0.6rem; padding: 0.4rem 0; border-bottom: 1px solid #2d3748; font-size: 0.875rem; }
+    .item:last-child { border: none; }
+    .bug { color: #fbbf24; }
+  </style>
+</head>
+<body>
+  <h1>QA Dashboard</h1>
+  <button id="btn" onclick="runTests()">▶ Run Tests</button>
+  <div class="suites">
+    <div class="suite"><h2>API Tests</h2><div id="api"></div></div>
+    <div class="suite"><h2>E2E Tests</h2><div id="e2e"></div></div>
+  </div>
+
+  <script>
+    async function runTests() {
+      const btn = document.getElementById('btn');
+      btn.disabled = true;
+      btn.textContent = 'Running...';
+      document.getElementById('api').innerHTML = '<p style="color:#64748b">Running...</p>';
+      document.getElementById('e2e').innerHTML = '<p style="color:#64748b">Running...</p>';
+
+      const data = await fetch('/run').then(r => r.json());
+
+      render('api', data.api);
+      render('e2e', data.e2e);
+
+      btn.disabled = false;
+      btn.textContent = '▶ Run Tests';
+    }
+
+    function render(id, tests) {
+      document.getElementById(id).innerHTML = tests.map(t => `
+        <div class="item">
+          <span>${t.pass ? '✅' : '❌'}</span>
+          <span class="${t.name.startsWith('bug:') ? 'bug' : ''}">${t.name}</span>
+        </div>`).join('');
+    }
+  </script>
+</body>
+</html>

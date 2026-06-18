@@ -1,0 +1,50 @@
+[
+  {
+    "id": "v1",
+    "title": "2021 Toyota RAV4 XLE",
+    "year": 2021,
+    "make": "Toyota",
+    "model": "RAV4",
+    "mileageKm": 46210,
+    "condition": "good",
+    "currentBid": 21900,
+    "bidCount": 12,
+    "dealer": "Maple Motors",
+    "location": "Toronto, ON",
+    "bodyStyle": "SUV",
+    "damageNotes": "Minor front bumper scuffs",
+    "photos": ["/assets/rav4-1.jpg", "/assets/rav4-2.jpg"]
+  },
+  {
+    "id": "v2",
+    "title": "2020 Honda Civic EX",
+    "year": 2020,
+    "make": "Honda",
+    "model": "Civic",
+    "mileageKm": 58190,
+    "condition": "fair",
+    "currentBid": 16250,
+    "bidCount": 8,
+    "dealer": "Urban Auto Hub",
+    "location": "Montreal, QC",
+    "bodyStyle": "Sedan",
+    "damageNotes": "Rear quarter-panel repaint",
+    "photos": ["/assets/civic-1.jpg", "/assets/civic-2.jpg"]
+  },
+  {
+    "id": "v3",
+    "title": "2019 Ford F-150 XLT",
+    "year": 2019,
+    "make": "Ford",
+    "model": "F-150",
+    "mileageKm": 79230,
+    "condition": "good",
+    "currentBid": 28700,
+    "bidCount": 17,
+    "dealer": "Prairie Trucks",
+    "location": "Calgary, AB",
+    "bodyStyle": "Truck",
+    "damageNotes": "Tailgate dent repaired",
+    "photos": ["/assets/f150-1.jpg", "/assets/f150-2.jpg"]
+  }
+]

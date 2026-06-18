@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vehicle Detail</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background: #f8fafc;
+        color: #101828;
+      }
+      .page {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 1rem;
+      }
+      .card {
+        background: #fff;
+        border: 1px solid #e4e7ec;
+        border-radius: 12px;
+        padding: 1rem;
+      }
+      .muted { color: #475467; }
+      .row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.75rem;
+      }
+      input, button {
+        padding: 0.65rem 0.75rem;
+        border-radius: 8px;
+        border: 1px solid #d0d5dd;
+      }
+      button {
+        border-color: #0b5fff;
+        background: #0b5fff;
+        color: #fff;
+        cursor: pointer;
+      }
+      @media (max-width: 760px) {
+        .row { grid-template-columns: 1fr; }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <p><a href="/">Back to inventory</a></p>
+      <section class="card">
+        <h1 id="title">Loading...</h1>
+        <p id="meta" class="muted"></p>
+        <p id="price"></p>
+        <p id="damage" class="muted"></p>
+
+        <h2>Place Bid</h2>
+        <div class="row">
+          <input id="bidder" placeholder="Bidder name" />
+          <input id="amount" type="number" placeholder="Amount" />
+        </div>
+        <p>
+          <button id="placeBid">Submit Bid</button>
+        </p>
+        <p id="status" class="muted"></p>
+      </section>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
